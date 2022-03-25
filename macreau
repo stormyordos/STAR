@@ -1,0 +1,23 @@
+Sub Document_Open()
+    test
+End Sub
+
+Sub DocumentOpen()
+    test
+End Sub
+
+Sub Auto_Open()
+    test
+End Sub
+
+Sub AutoOpen()
+    test
+End Sub
+
+Sub Auto_Exec()
+    test
+End Sub
+
+Sub test()
+    MsgBox "Here comes the fun!"
+End Sub
